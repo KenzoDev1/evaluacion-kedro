@@ -2,6 +2,30 @@
 #
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://docs.kedro.org/en/stable/catalog-data/introduction/#data-catalog
-example_csv:
-  type: pandas.CSVDataSet
-  filepath: data/01_raw/example.csv
+
+# ===== DATOS CRUDOS =====
+pacientes_raw:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/pacientes.csv
+  load_args:
+    encoding: utf-8
+
+consultas_raw:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/consultas.csv
+  load_args:
+    encoding: utf-8
+
+examenes_raw:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/examenes.csv
+  load_args:
+    encoding: utf-8
+
+medicamentos_raw:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/medicamentos.csv
+  load_args:
+    encoding: utf-8
+
+# (Luego agregarás aquí las rutas para los datos limpios en 02_intermediate, etc.)
