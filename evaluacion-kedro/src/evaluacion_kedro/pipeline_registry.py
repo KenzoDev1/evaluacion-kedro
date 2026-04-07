@@ -1,16 +1,12 @@
-"""Project pipelines."""
-from __future__ import annotations
+from  evaluacion_kedro.pipelines import data_cleaning # Importamos el módulo (la carpeta)
 
-from kedro.framework.project import find_pipelines
-from kedro.pipeline import Pipeline
+def register_pipelines():
+    # 1. Creamos la variable que guarda el pipeline real
+    # Usamos el módulo 'data_cleaning' para llamar a su función 'create_pipeline'
+    pipeline_de_limpieza = data_cleaning.create_pipeline() [cite: 35]
 
-
-def register_pipelines() -> dict[str, Pipeline]:
-    """Register the project's pipelines.
-
-    Returns:
-        A mapping from pipeline names to ``Pipeline`` objects.
-    """
-    pipelines = find_pipelines(raise_errors=True)
-    pipelines["__default__"] = sum(pipelines.values())
-    return pipelines
+    # 2. Retornamos el diccionario donde la LLAVE es lo que escribes en la terminal
+    return {
+        "cleaning": pipeline_de_limpieza, # 'cleaning' es el alias para la terminal [cite: 35, 39]
+        "__default__": pipeline_de_limpieza # Esto hace que 'kedro run' a secas también limpie [cite: 35]
+    }
