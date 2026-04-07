@@ -30,7 +30,7 @@ medicamentos_raw:
 
 # ===== DATOS LIMPIOS =====
 pacientes_cleaned:
-  type: pandas.ParquetDataset
+  type: pandas.CSVDataset
   filepath: data/02_intermediate/pacientes_cleaned.csv
   load_args:
     index_col: False
@@ -38,13 +38,13 @@ pacientes_cleaned:
     index: False
 
 consultas_cleaned:
-  type: pandas.ParquetDataset
+  type: pandas.CSVDataset
   filepath: data/02_intermediate/consultas_cleaned.csv
   save_args:
     index: False
 
 examenes_cleaned:
-  type: pandas.ParquetDataset
+  type: pandas.CSVDataset
   filepath: data/02_intermediate/examenes_cleaned.csv
   save_args:
     index: False

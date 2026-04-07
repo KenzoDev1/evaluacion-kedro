@@ -3,8 +3,6 @@ This is a boilerplate pipeline 'data_cleaning'
 generated using Kedro 1.3.0
 """
 import pandas as pd
-
-import pandas as pd
 import numpy as np
 
 # ==========================================
